@@ -1,0 +1,17 @@
+//
+   Created by School on 9/23/2016.
+extends layout
+block content
+    div.mycam#my_camera(style='width:320px; height:240px;')
+    script(src='../nodemodules/webcamjs/webcam.js')
+
+    div#my_result
+    script(language='JavaScript').
+        //Webcam = require('../node_modules/webcamjs/webcam')
+        Webcam.attach('#my_camera');
+        function take_snapshot() {
+            Webcam.snap(function (data_uri) {
+                document.getElementById('my_result').innerHTML = '<img src="' + data_uri + '"/>';
+            });
+        }
+    a(href='javascript:void(take_snapshot())') Take Snapshot

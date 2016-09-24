@@ -1,0 +1,10 @@
+//
+   Created by School on 9/23/2016.
+
+extends layout
+block content
+    div.col-sm-3
+        title
+        form.add_book(action = '/add_book', method='post')
+            input.isbn(type ='text', size = '13')
+            input.add_book_button(type = 'submit', value='Find and Add Book')
